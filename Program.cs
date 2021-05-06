@@ -9,19 +9,29 @@ namespace DesignPatterns
         {
             #region  Absstract Factory
 
-            // Abstract factory #1
+            /// <summary>  
+            /// Abstract Factory Pattern Demo  
+            /// </summary>  
 
-            AbstractFactory.AbstractFactory factory1 = new ConcreteFactory1();
-            Client client1 = new Client(factory1);
-            client1.Run();
+            static void Main()
+            {
+                IMobilePhone nokiaMobilePhone = new Nokia();
+                MobileClient nokiaClient = new MobileClient(nokiaMobilePhone);
 
-            // Abstract factory #2
+                Console.WriteLine("********* NOKIA **********");
+                Console.WriteLine(nokiaClient.GetSmartPhoneModelDetails());
+                Console.WriteLine(nokiaClient.GetNormalPhoneModelDetails());
 
-            AbstractFactory.AbstractFactory factory2 = new ConcreteFactory2();
-            Client client2 = new Client(factory2);
-            client2.Run();
+                IMobilePhone samsungMobilePhone = new Samsung();
+                MobileClient samsungClient = new MobileClient(samsungMobilePhone);
 
-            // Wait for user input
+                Console.WriteLine("******* SAMSUNG **********");
+                Console.WriteLine(samsungClient.GetSmartPhoneModelDetails());
+                Console.WriteLine(samsungClient.GetNormalPhoneModelDetails());
+
+                Console.ReadKey();
+            }
+
 
             Console.ReadKey();
             #endregion

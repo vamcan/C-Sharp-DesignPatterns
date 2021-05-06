@@ -1,164 +1,132 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DesignPatterns.AbstractFactory
 {
     /// <summary>
-
     /// The 'AbstractFactory' abstract class
-
     /// </summary>
-
-    abstract class AbstractFactory
-
+    interface IMobilePhone
     {
-        public abstract AbstractProductA CreateProductA();
-        public abstract AbstractProductB CreateProductB();
+        public ISmartPhone GetSmartPhone();
+        public INormalPhone GetNormalPhone();
     }
 
 
-    /// <summary>
-
-    /// The 'ConcreteFactory1' class
-
-    /// </summary>
-
-    class ConcreteFactory1 : AbstractFactory
-
+    /// <summary>  
+    /// The 'ConcreteFactory1' class.  
+    /// </summary>  
+    class Nokia : IMobilePhone
     {
-        public override AbstractProductA CreateProductA()
+        public ISmartPhone GetSmartPhone()
         {
-            return new ProductA1();
+            return new NokiaPixel();
         }
-        public override AbstractProductB CreateProductB()
+
+        public INormalPhone GetNormalPhone()
         {
-            return new ProductB1();
+            return new Nokia1600();
         }
     }
 
-    /// <summary>
-
-    /// The 'ConcreteFactory2' class
-
-    /// </summary>
-
-    class ConcreteFactory2 : AbstractFactory
-
+    /// <summary>  
+    /// The 'ConcreteFactory2' class.  
+    /// </summary>  
+    class Samsung : IMobilePhone
     {
-        public override AbstractProductA CreateProductA()
+        public ISmartPhone GetSmartPhone()
         {
-            return new ProductA2();
+            return new SamsungGalaxy();
         }
-        public override AbstractProductB CreateProductB()
+
+        public INormalPhone GetNormalPhone()
         {
-            return new ProductB2();
+            return new SamsungGuru();
         }
     }
 
-    /// <summary>
-
-    /// The 'AbstractProductA' abstract class
-
-    /// </summary>
-
-    abstract class AbstractProductA
-
+    /// <summary>  
+    /// The 'AbstractProductA' interface  
+    /// </summary>  
+    interface ISmartPhone
     {
+        string GetModelDetails();
     }
 
-    /// <summary>
-
-    /// The 'AbstractProductB' abstract class
-
-    /// </summary>
-
-    abstract class AbstractProductB
-
+    /// <summary>  
+    /// The 'AbstractProductB' interface  
+    /// </summary>  
+    interface INormalPhone
     {
-        public abstract void Interact(AbstractProductA a);
+        string GetModelDetails();
     }
 
 
-    /// <summary>
-
-    /// The 'ProductA1' class
-
-    /// </summary>
-
-    class ProductA1 : AbstractProductA
-
+    /// <summary>  
+    /// The 'ProductA1' class  
+    /// </summary>  
+    class NokiaPixel : ISmartPhone
     {
-    }
-
-    /// <summary>
-
-    /// The 'ProductB1' class
-
-    /// </summary>
-
-    class ProductB1 : AbstractProductB
-
-    {
-        public override void Interact(AbstractProductA a)
+        public string GetModelDetails()
         {
-            Console.WriteLine(this.GetType().Name +
-              " interacts with " + a.GetType().Name);
+            return "Model: Nokia Pixel\nRAM: 3GB\nCamera: 8MP\n";
         }
     }
 
-    /// <summary>
-
-    /// The 'ProductA2' class
-
-    /// </summary>
-
-    class ProductA2 : AbstractProductA
-
+    /// <summary>  
+    /// The 'ProductA2' class  
+    /// </summary>  
+    class SamsungGalaxy : ISmartPhone
     {
-    }
-
-    /// <summary>
-
-    /// The 'ProductB2' class
-
-    /// </summary>
-
-    class ProductB2 : AbstractProductB
-
-    {
-        public override void Interact(AbstractProductA a)
+        public string GetModelDetails()
         {
-            Console.WriteLine(this.GetType().Name +
-              " interacts with " + a.GetType().Name);
+            return "Model: Samsung Galaxy\nRAM: 2GB\nCamera: 13MP\n";
         }
     }
 
-    /// <summary>
-
-    /// The 'Client' class. Interaction environment for the products.
-
-    /// </summary>
-
-    class Client
-
+    /// <summary>  
+    /// The 'ProductB1' class  
+    /// </summary>  
+    class Nokia1600 : INormalPhone
     {
-        private AbstractProductA _abstractProductA;
-        private AbstractProductB _abstractProductB;
-
-        // Constructor
-
-        public Client(AbstractFactory factory)
+        public string GetModelDetails()
         {
-            _abstractProductB = factory.CreateProductB();
-            _abstractProductA = factory.CreateProductA();
+            return "Model: Nokia 1600\nRAM: NA\nCamera: NA\n";
+        }
+    }
+
+    /// <summary>  
+    /// The 'ProductB2' class  
+    /// </summary>  
+    class SamsungGuru : INormalPhone
+    {
+        public string GetModelDetails()
+        {
+            return "Model: Samsung Guru\nRAM: NA\nCamera: NA\n";
+        }
+    }
+
+    /// <summary>  
+    /// The 'Client' class  
+    /// </summary>  
+    class MobileClient
+    {
+        ISmartPhone smartPhone;
+        INormalPhone normalPhone;
+
+        public MobileClient(IMobilePhone factory)
+        {
+            smartPhone = factory.GetSmartPhone();
+            normalPhone = factory.GetNormalPhone();
         }
 
-        public void Run()
+        public string GetSmartPhoneModelDetails()
         {
-            _abstractProductB.Interact(_abstractProductA);
+            return smartPhone.GetModelDetails();
+        }
+
+        public string GetNormalPhoneModelDetails()
+        {
+            return normalPhone.GetModelDetails();
         }
     }
 }
