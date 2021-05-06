@@ -16,6 +16,30 @@ namespace DesignPatterns.AbstractFactory
     }
 
 
+    class AdobeConnect : IWebinarPlatform
+    {
+        public IJoinWebinar JoinWebinar()
+        {
+            return new AdobeConnectJoinWebinar();
+        }
+
+        public IStartAsAttendar StartAsAttender()
+        {
+            return new AdobeConnectStartAsAttendar();
+        }
+
+        public IStartAsManager StartAsManager()
+        {
+            return new AdobeConnectStartAsManager();
+        }
+
+        public IGetRecords GetRecords()
+        {
+            return new AdobeConnectGetRecords();
+        }
+    }
+
+
 
     class BigBlueButton : IWebinarPlatform
     {
@@ -94,6 +118,14 @@ namespace DesignPatterns.AbstractFactory
             return "SkyRoomJoinWebinar";
         }
     }
+    class AdobeConnectJoinWebinar : IJoinWebinar
+    {
+        public string Execute()
+        {
+            return "AdobeConnectJoinWebinar";
+        }
+    }
+
 
     class BigBlueButtonStartAsManager : IStartAsManager
     {
@@ -107,6 +139,13 @@ namespace DesignPatterns.AbstractFactory
         public string Execute()
         {
             return "SkyRoomStartAsManager";
+        }
+    }
+    class AdobeConnectStartAsManager : IStartAsManager
+    {
+        public string Execute()
+        {
+            return "AdobeConnectStartAsManager";
         }
     }
 
@@ -124,6 +163,13 @@ namespace DesignPatterns.AbstractFactory
             return "BigBlueButtonStartAsAttendar";
         }
     }
+    class AdobeConnectStartAsAttendar : IStartAsAttendar
+    {
+        public string Execute()
+        {
+            return "AdobeConnectStartAsAttendar";
+        }
+    }
 
     class BigBlueButtonGetRecords : IGetRecords
     {
@@ -137,6 +183,13 @@ namespace DesignPatterns.AbstractFactory
         public string Execute()
         {
             return "SkyRoomGetRecords";
+        }
+    }
+    class AdobeConnectGetRecords : IGetRecords
+    {
+        public string Execute()
+        {
+            return "AdobeConnectGetRecords";
         }
     }
 
