@@ -1,0 +1,16 @@
+C:\reza\Git\DesignPatterns\bin\Debug\net5.0\DesignPatterns.exe
+C:\reza\Git\DesignPatterns\bin\Debug\net5.0\DesignPatterns.deps.json
+C:\reza\Git\DesignPatterns\bin\Debug\net5.0\DesignPatterns.runtimeconfig.json
+C:\reza\Git\DesignPatterns\bin\Debug\net5.0\DesignPatterns.runtimeconfig.dev.json
+C:\reza\Git\DesignPatterns\bin\Debug\net5.0\DesignPatterns.dll
+C:\reza\Git\DesignPatterns\bin\Debug\net5.0\ref\DesignPatterns.dll
+C:\reza\Git\DesignPatterns\bin\Debug\net5.0\DesignPatterns.pdb
+C:\reza\Git\DesignPatterns\obj\Debug\net5.0\DesignPatterns.csprojAssemblyReference.cache
+C:\reza\Git\DesignPatterns\obj\Debug\net5.0\DesignPatterns.GeneratedMSBuildEditorConfig.editorconfig
+C:\reza\Git\DesignPatterns\obj\Debug\net5.0\DesignPatterns.AssemblyInfoInputs.cache
+C:\reza\Git\DesignPatterns\obj\Debug\net5.0\DesignPatterns.AssemblyInfo.cs
+C:\reza\Git\DesignPatterns\obj\Debug\net5.0\DesignPatterns.csproj.CoreCompileInputs.cache
+C:\reza\Git\DesignPatterns\obj\Debug\net5.0\DesignPatterns.dll
+C:\reza\Git\DesignPatterns\obj\Debug\net5.0\ref\DesignPatterns.dll
+C:\reza\Git\DesignPatterns\obj\Debug\net5.0\DesignPatterns.pdb
+C:\reza\Git\DesignPatterns\obj\Debug\net5.0\DesignPatterns.genruntimeconfig.cache
