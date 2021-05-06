@@ -33,7 +33,7 @@ namespace DesignPatterns
             WebinarPlatformClient bbbClient = new WebinarPlatformClient(bbbPlatform);
 
             Console.WriteLine("********* bbb **********");
-            Console.WriteLine(bbbClient.JoinWebinar());
+            Console.WriteLine(bbbClient.JoinWebinar()); 
             Console.WriteLine(bbbClient.StartAsAttender());
             Console.WriteLine(bbbClient.StartAsManager());
             Console.WriteLine(bbbClient.GetRecords());
