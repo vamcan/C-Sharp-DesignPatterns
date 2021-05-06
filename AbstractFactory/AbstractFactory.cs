@@ -110,7 +110,7 @@ namespace DesignPatterns.AbstractFactory
     /// </summary>  
     class MobileClient
     {
-        ISmartPhone smartPhone;
+        ISmartPhone smartPhone; 
         INormalPhone normalPhone;
 
         public MobileClient(IMobilePhone factory)
