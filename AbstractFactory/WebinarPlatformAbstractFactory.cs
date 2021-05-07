@@ -38,9 +38,6 @@ namespace DesignPatterns.AbstractFactory
             return new AdobeConnectGetRecords();
         }
     }
-
-
-
     class BigBlueButton : IWebinarPlatform
     {
         public IJoinWebinar JoinWebinar()
@@ -85,6 +82,8 @@ namespace DesignPatterns.AbstractFactory
             return new SkyRoomGetRecords();
         }
     }
+
+    
 
     interface IJoinWebinar
     {

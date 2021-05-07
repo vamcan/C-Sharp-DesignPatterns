@@ -31,7 +31,7 @@ namespace DesignPatterns
             #region SecondSample WebinarPlatform
             IWebinarPlatform bbbPlatform = new BigBlueButton();
             WebinarPlatformClient bbbClient = new WebinarPlatformClient(bbbPlatform);
-
+            
             Console.WriteLine("********* bbb **********");
             Console.WriteLine(bbbClient.JoinWebinar()); 
             Console.WriteLine(bbbClient.StartAsAttender());
@@ -45,7 +45,7 @@ namespace DesignPatterns
             Console.WriteLine(skyRoomClient.JoinWebinar());
             Console.WriteLine(skyRoomClient.StartAsAttender());
             Console.WriteLine(skyRoomClient.StartAsManager());
-            Console.WriteLine(skyRoomClient.GetRecords());
+            Console.WriteLine(skyRoomClient.GetRecords()); 
 
             #endregion
 
