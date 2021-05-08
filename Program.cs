@@ -1,5 +1,6 @@
 ﻿using System;
 using DesignPatterns.AbstractFactory;
+using DesignPatterns.State;
 
 namespace DesignPatterns
 {
@@ -7,50 +8,87 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
-            #region  Absstract Factory
+            #region  Absstract Factory Pattern
+
+            //#region FirstSample
+            ////IMobilePhone nokiaMobilePhone = new Nokia();
+            ////MobileClient nokiaClient = new MobileClient(nokiaMobilePhone);
+
+            ////Console.WriteLine("********* NOKIA **********");
+            ////Console.WriteLine(nokiaClient.GetSmartPhoneModelDetails());
+            ////Console.WriteLine(nokiaClient.GetNormalPhoneModelDetails());
+
+            ////IMobilePhone samsungMobilePhone = new Samsung();
+            ////MobileClient samsungClient = new MobileClient(samsungMobilePhone);
+
+            ////Console.WriteLine("******* SAMSUNG **********");
+            ////Console.WriteLine(samsungClient.GetSmartPhoneModelDetails());
+            ////Console.WriteLine(samsungClient.GetNormalPhoneModelDetails());
+
+
+
+            //#endregion
+
+            //#region SecondSample WebinarPlatform
+            //IWebinarPlatform bbbPlatform = new BigBlueButton();
+            //WebinarPlatformClient bbbClient = new WebinarPlatformClient(bbbPlatform);
+
+            //Console.WriteLine("********* bbb **********");
+            //Console.WriteLine(bbbClient.JoinWebinar()); 
+            //Console.WriteLine(bbbClient.StartAsAttender());
+            //Console.WriteLine(bbbClient.StartAsManager());
+            //Console.WriteLine(bbbClient.GetRecords());
+
+            //IWebinarPlatform skyRoomPlatform = new SkyRoom();
+            //WebinarPlatformClient skyRoomClient = new WebinarPlatformClient(skyRoomPlatform);
+
+            //Console.WriteLine("******* sky room **********");
+            //Console.WriteLine(skyRoomClient.JoinWebinar());
+            //Console.WriteLine(skyRoomClient.StartAsAttender());
+            //Console.WriteLine(skyRoomClient.StartAsManager());
+            //Console.WriteLine(skyRoomClient.GetRecords());
+
+            //#endregion
+            #endregion
+
+            #region State Pattern
 
             #region FirstSample
-            //IMobilePhone nokiaMobilePhone = new Nokia();
-            //MobileClient nokiaClient = new MobileClient(nokiaMobilePhone);
+            // Setup context in a state
 
-            //Console.WriteLine("********* NOKIA **********");
-            //Console.WriteLine(nokiaClient.GetSmartPhoneModelDetails());
-            //Console.WriteLine(nokiaClient.GetNormalPhoneModelDetails());
+            //Context c = new Context(new ConcreteStateA());
 
-            //IMobilePhone samsungMobilePhone = new Samsung();
-            //MobileClient samsungClient = new MobileClient(samsungMobilePhone);
+            //// Issue requests, which toggles state
 
-            //Console.WriteLine("******* SAMSUNG **********");
-            //Console.WriteLine(samsungClient.GetSmartPhoneModelDetails());
-            //Console.WriteLine(samsungClient.GetNormalPhoneModelDetails());
-
+            //c.Request();
+            //c.Request();
+            //c.Request();
+            //c.Request();
 
 
             #endregion
 
-            #region SecondSample WebinarPlatform
-            IWebinarPlatform bbbPlatform = new BigBlueButton();
-            WebinarPlatformClient bbbClient = new WebinarPlatformClient(bbbPlatform);
-            
-            Console.WriteLine("********* bbb **********");
-            Console.WriteLine(bbbClient.JoinWebinar()); 
-            Console.WriteLine(bbbClient.StartAsAttender());
-            Console.WriteLine(bbbClient.StartAsManager());
-            Console.WriteLine(bbbClient.GetRecords());
+            #region BankSample
 
-            IWebinarPlatform skyRoomPlatform = new SkyRoom();
-            WebinarPlatformClient skyRoomClient = new WebinarPlatformClient(skyRoomPlatform);
+            // Open a new account
 
-            Console.WriteLine("******* sky room **********");
-            Console.WriteLine(skyRoomClient.JoinWebinar());
-            Console.WriteLine(skyRoomClient.StartAsAttender());
-            Console.WriteLine(skyRoomClient.StartAsManager());
-            Console.WriteLine(skyRoomClient.GetRecords()); 
+            Account account = new Account("Jim Johnson");
+
+            // Apply financial transactions
+
+            account.Deposit(500.0);
+            account.Deposit(300.0);
+            account.Deposit(550.0);
+            account.PayInterest();
+            account.Withdraw(2000.00);
+            account.Withdraw(1100.00);
 
             #endregion
+            #endregion
+
+
 
             Console.ReadKey();
-            #endregion
         }
     }
 }
