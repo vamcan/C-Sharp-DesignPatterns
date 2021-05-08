@@ -7,7 +7,7 @@ namespace DesignPatterns.AbstractFactory
     /// </summary>
     interface IMobilePhone
     {
-        public ISmartPhone GetSmartPhone();
+        public ISmartPhone GetSmartPhone();  
         public INormalPhone GetNormalPhone();
     }
 
